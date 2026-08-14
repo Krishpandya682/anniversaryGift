@@ -4,24 +4,46 @@ import "./App.css";
 
 /* ============================================================
    EmailJS Configuration
-   Replace these with your values from emailjs.com
-============================================================ */
-/* ============================================================
-   EmailJS Configuration
 ============================================================ */
 
 const EMAILJS_SERVICE_ID = "service_popwzwu";
 const EMAILJS_TEMPLATE_ID = "template_ljnio37";
 const EMAILJS_PUBLIC_KEY = "ztKSaXyBd09tC5YgN";
-/*
-===================================================
+
+/* ============================================================
+   Photos
+============================================================ */
+
+const photos = [
+  "./images/01145116-57da-434b-b162-e4ad03b1fe38.JPG",
+  "./images/3a8765e9-074a-4551-95e8-63636c0344fb.JPG",
+  "./images/4ca12ede-1428-4897-9aaf-9b3b558fc73d.JPG",
+  "./images/a7192535-8dd9-4abf-8f81-ed84abb67ea4.JPG",
+  "./images/d772d3e4-304c-4366-b0af-1c2961ea2fbd.JPG",
+  "./images/eeb2be50-a2c0-4690-aa7e-6441b898b96d.JPG",
+];
+
+/* ============================================================
    Hero Page
 ============================================================ */
 
 function Hero({ onNext }) {
   return (
-    <section className="page hero">
-      <div className="card">
+    <section
+      className="page hero"
+      style={{
+        backgroundImage: `
+          linear-gradient(
+            rgba(250,247,243,.72),
+            rgba(250,247,243,.88)
+          ),
+          url("${photos[0]}")
+        `,
+      }}
+    >
+      <div className="card hero-card">
+        <div className="eyebrow">A little something from us</div>
+
         <h1>❤️ Happy Anniversary ❤️</h1>
 
         <p>
@@ -41,58 +63,99 @@ function Hero({ onNext }) {
         <p>
           I'll take care of the planning.
           <br />
-          You just have to enjoy it.
+          <strong>You just have to enjoy it.</strong>
         </p>
 
-        <button onClick={onNext}>Begin</button>
+        <button onClick={onNext}>Begin ❤️</button>
       </div>
     </section>
   );
 }
 
 /* ============================================================
-   Letters Page
+   Memories Page
 ============================================================ */
 
-function Letters({ onNext }) {
+function Memories({ onNext }) {
   return (
-    <section className="page">
-      <div className="card">
-        <h2>❤️ From Mom</h2>
+    <section className="page memories-page">
+      <div className="memories-container">
 
-        <p>
-          Happy Anniversary! We are so proud of both of you and wish you many
-          more years filled with happiness, laughter, and unforgettable
-          memories.
-        </p>
+        <div className="section-intro">
+          <div className="eyebrow">A few memories along the way</div>
 
-        <hr />
+          <h2>For two people worth celebrating</h2>
 
-        <h2>❤️ From Dad</h2>
+          <p>
+            Before you plan your next adventure, here's a little reminder of
+            some of the adventures you've already had.
+          </p>
+        </div>
 
-        <p>
-          Wishing you both a lifetime of adventures together. May every year be
-          even better than the last.
-        </p>
+        <div className="photo-grid">
+          <div className="photo-frame photo-large">
+            <img src={photos[1]} alt="A favorite memory" />
+          </div>
 
-        <hr />
+          <div className="photo-frame photo-small">
+            <img src={photos[2]} alt="A favorite memory" />
+          </div>
 
-        <h2>❤️ From Krish</h2>
+          <div className="photo-frame photo-small offset">
+            <img src={photos[3]} alt="A favorite memory" />
+          </div>
 
-        <p>
-          I wanted to do something a little different this year.
-        </p>
+          <div className="photo-frame photo-large">
+            <img src={photos[4]} alt="A favorite memory" />
+          </div>
+        </div>
 
-        <p>
-          Instead of trying to guess what you'd enjoy, I thought I'd let you
-          choose the kind of day you'd love...
-        </p>
+        <div className="letters">
 
-        <p>
-          Once you tell me, I'll handle everything else.
-        </p>
+          <div className="letter">
+            <div className="letter-label">From Mom</div>
 
-        <button onClick={onNext}>Plan Our Day</button>
+            <p>
+              Happy Anniversary! We are so proud of both of you and wish you
+              many more years filled with happiness, laughter, and
+              unforgettable memories.
+            </p>
+          </div>
+
+          <div className="letter">
+            <div className="letter-label">From Dad</div>
+
+            <p>
+              Wishing you both a lifetime of adventures together. May every
+              year be even better than the last.
+            </p>
+          </div>
+
+          <div className="letter krish-letter">
+            <div className="letter-label">From Krish</div>
+
+            <p>
+              I wanted to do something a little different this year.
+            </p>
+
+            <p>
+              Instead of trying to guess what you'd enjoy, I thought I'd let
+              you choose the kind of day you'd love.
+            </p>
+
+            <p>
+              Once you tell me, I'll handle everything else.
+            </p>
+          </div>
+
+        </div>
+
+        <div className="extra-photo">
+          <img src={photos[5]} alt="Another favorite memory" />
+        </div>
+
+        <button onClick={onNext}>Plan Your Day →</button>
+
       </div>
     </section>
   );
@@ -150,11 +213,20 @@ function PlannerForm({ onSubmit }) {
   }
 
   return (
-    <section className="page">
+    <section className="page planner-page">
       <div className="card form-card">
+
+        <div className="eyebrow">Your turn</div>
+
         <h2>Let's Plan Your Anniversary</h2>
 
+        <p className="form-intro">
+          You don't need to figure out the details. Just tell me the basics
+          and I'll take it from here.
+        </p>
+
         <form onSubmit={submit}>
+
           <label>Date You'll Be Together</label>
 
           <input
@@ -213,16 +285,16 @@ function PlannerForm({ onSubmit }) {
             type="submit"
             disabled={sending}
           >
-            {sending ? "Planning..." : "Submit ❤️"}
+            {sending ? "Planning..." : "Send My Choices ❤️"}
           </button>
 
         </form>
 
       </div>
-
     </section>
   );
 }
+
 /* ============================================================
    Success Page
 ============================================================ */
@@ -232,7 +304,9 @@ function Success() {
     <section className="page success">
       <div className="card">
 
-        <h1>🎉</h1>
+        <div className="success-icon">🎉</div>
+
+        <div className="eyebrow">And now...</div>
 
         <h2>You're All Set!</h2>
 
@@ -261,7 +335,6 @@ function Success() {
   );
 }
 
-
 /* ============================================================
    Main App
 ============================================================ */
@@ -280,7 +353,7 @@ export default function App() {
       )}
 
       {page === 1 && (
-        <Letters
+        <Memories
           onNext={() => setPage(2)}
         />
       )}
@@ -298,7 +371,3 @@ export default function App() {
     </div>
   );
 }
-
-
-
-
