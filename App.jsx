@@ -165,17 +165,6 @@ function Memories({ onNext }) {
     },
 
     {
-      type: "message",
-      from: "❤️",
-      text: (
-        <p>
-          Here's to all the memories you've made so far —
-          and all the ones still to come.
-        </p>
-      ),
-    },
-
-    {
       type: "photo",
       image: photos[5],
       alt: "A family memory",
