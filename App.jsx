@@ -47,12 +47,12 @@ function Hero({ onNext }) {
         <h1>❤️ Happy Anniversary ❤️</h1>
 
         <p>
-          This year, I didn't want to give you something that would sit on a
+          This year, we didn't want to give you something that would sit on a
           shelf.
         </p>
 
         <p>
-          Instead, I wanted to give you something to look forward to.
+          Instead, we wanted to give you something to look forward to.
         </p>
 
         <p>
@@ -100,17 +100,7 @@ function Memories({ onNext }) {
           <div className="photo-frame photo-small">
             <img src={photos[2]} alt="A favorite memory" />
           </div>
-
-          <div className="photo-frame photo-small offset">
-            <img src={photos[3]} alt="A favorite memory" />
-          </div>
-
-          <div className="photo-frame photo-large">
-            <img src={photos[4]} alt="A favorite memory" />
-          </div>
-        </div>
-
-        <div className="letters">
+          <div className="letters">
 
           <div className="letter">
             <div className="letter-label">From Mom</div>
@@ -122,6 +112,15 @@ function Memories({ onNext }) {
             </p>
           </div>
 
+          <div className="photo-frame photo-small offset">
+            <img src={photos[3]} alt="A favorite memory" />
+          </div>
+
+          <div className="photo-frame photo-large">
+            <img src={photos[4]} alt="A favorite memory" />
+          </div>
+        </div>
+
           <div className="letter">
             <div className="letter-label">From Dad</div>
 
@@ -130,6 +129,16 @@ function Memories({ onNext }) {
               year be even better than the last.
             </p>
           </div>
+           
+          <div className="photo-frame photo-small offset">
+            <img src={photos[3]} alt="A favorite memory" />
+          </div>
+
+          <div className="photo-frame photo-large">
+            <img src={photos[4]} alt="A favorite memory" />
+          </div>
+        </div>
+
 
           <div className="letter krish-letter">
             <div className="letter-label">From Krish</div>
@@ -171,7 +180,7 @@ function PlannerForm({ onSubmit }) {
   const [form, setForm] = useState({
     date: "",
     location: "",
-    vibe: "",
+    vibe: [],
     comments: "",
   });
 
@@ -248,7 +257,7 @@ function PlannerForm({ onSubmit }) {
             <option value="">Select...</option>
             <option>Seattle</option>
             <option>Raleigh</option>
-            <option>Somewhere Else</option>
+            <option>Somewhere Else (Mention below)</option>
           </select>
 
           <label>What Kind Of Experience?</label>
@@ -257,16 +266,23 @@ function PlannerForm({ onSubmit }) {
             name="vibe"
             value={form.vibe}
             onChange={handleChange}
+            multiple
             required
           >
-            <option value="">Select...</option>
-            <option>Relax & Recharge</option>
-            <option>Luxury</option>
-            <option>Adventure</option>
-            <option>Foodie Experience</option>
-            <option>Creative</option>
-            <option>Nature</option>
-            <option>Surprise Us</option>
+            <option value="">Select...</option>     
+            <option>🌿 Relax & Recharge</option>
+            <option>✨ Luxury & Indulgence</option>
+            <option>🍷 Food & Wine</option>
+            <option>🎨 Arts & Creativity</option>
+            <option>🎭 Entertainment & Night Out</option>
+            <option>🧗 Adventure & Adrenaline</option>
+            <option>🌲 Nature & Outdoors</option>
+            <option>❤️ Romantic & Intimate</option>
+            <option>🧘 Wellness & Self-Care</option>
+            <option>🏡 Cozy & Low-Key</option>
+            <option>🗺️ Explore Somewhere New</option>
+            <option>🧠 Learn Something New</option>
+            <option>🎁 Surprise Us</option>
           </select>
 
           <label>
