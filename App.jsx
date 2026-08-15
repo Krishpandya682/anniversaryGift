@@ -19,8 +19,8 @@ const photos = [
   "./images/2.JPG",
   "./images/3.JPG",
   "./images/4.JPG",
-  "./images/5.JPG",
   "./images/6.JPG",
+  "./images/5.JPG",
 ];
 
 /* ============================================================
@@ -79,130 +79,110 @@ function Memories({ onNext }) {
 
   // Temporary sequence using the photos we currently have.
   // Add more photos to the photos array later and we can expand this.
-  const memorySequence = [
-    {
-      type: "photo",
-      image: photos[1],
-      alt: "A favorite memory",
-      position: "center",
-      size: "large",
-    },
+const memorySequence = [
+  {
+    type: "photo",
+    image: photos[0],
+    alt: "A favorite memory",
+    position: "center",
+    size: "large",
+  },
 
-    {
-      type: "message",
-      from: "Mom",
-      text: (
+  {
+    type: "message",
+    from: "Mom",
+    text: (
+      <p>
+        Happy Anniversary! We are so proud of both of you and wish you
+        many more years filled with happiness, laughter, and
+        unforgettable memories.
+      </p>
+    ),
+  },
+
+  {
+    type: "photo",
+    image: photos[1],
+    alt: "A favorite memory",
+    position: "right",
+    size: "medium",
+  },
+
+  {
+    type: "message",
+    from: "Dad",
+    text: (
+      <p>
+        Wishing you both a lifetime of adventures together. May every
+        year be even better than the last.
+      </p>
+    ),
+  },
+
+  {
+    type: "photo",
+    image: photos[2],
+    alt: "A favorite memory",
+    position: "left",
+    size: "medium",
+  },
+
+  {
+    type: "message",
+    from: "Krish",
+    text: (
+      <>
         <p>
-          Happy Anniversary! We are so proud of both of you and wish you
-          many more years filled with happiness, laughter, and
-          unforgettable memories.
+          I wanted to do something a little different this year.
         </p>
-      ),
-    },
 
-    {
-      type: "photo",
-      image: photos[2],
-      alt: "A favorite memory",
-      position: "right",
-      size: "medium",
-    },
-
-    {
-      type: "message",
-      from: "Dad",
-      text: (
         <p>
-          Wishing you both a lifetime of adventures together. May every
-          year be even better than the last.
+          Instead of trying to guess what you'd enjoy, I thought I'd
+          let you choose the kind of day you'd love.
         </p>
-      ),
-    },
 
-    {
-      type: "photo",
-      image: photos[3],
-      alt: "A favorite memory",
-      position: "left",
-      size: "medium",
-    },
-
-    {
-      type: "message",
-      from: "Krish",
-      text: (
-        <>
-          <p>
-            I wanted to do something a little different this year.
-          </p>
-
-          <p>
-            Instead of trying to guess what you'd enjoy, I thought I'd
-            let you choose the kind of day you'd love.
-          </p>
-
-          <p>
-            Once you tell me, I'll handle everything else.
-          </p>
-        </>
-      ),
-    },
-
-    {
-      type: "photo",
-      image: photos[4],
-      alt: "A favorite memory",
-      position: "right",
-      size: "large",
-    },
-
-    // Temporary repeated photo
-    {
-      type: "photo",
-      image: photos[5],
-      alt: "Another favorite memory",
-      position: "left",
-      size: "medium",
-    },
-
-    {
-      type: "message",
-      from: "❤️",
-      text: (
         <p>
-          Here's to all the memories you've made so far —
-          and all the ones still to come.
+          Once you tell me, I'll handle everything else.
         </p>
-      ),
-    },
+      </>
+    ),
+  },
 
-    // Temporary repeated photo
-    {
-      type: "photo",
-      image: photos[6],
-      alt: "Another favorite memory",
-      position: "center",
-      size: "large",
-    },
+  {
+    type: "photo",
+    image: photos[3],
+    alt: "A favorite memory",
+    position: "right",
+    size: "large",
+  },
 
-    // Temporary repeated photo
-    {
-      type: "photo",
-      image: photos[7],
-      alt: "Another favorite memory",
-      position: "right",
-      size: "medium",
-    },
+  {
+    type: "photo",
+    image: photos[4],
+    alt: "A favorite memory",
+    position: "left",
+    size: "medium",
+  },
 
-    // Temporary repeated photo
-    {
-      type: "photo",
-      image: photos[8],
-      alt: "Another favorite memory",
-      position: "left",
-      size: "medium",
-    },
-  ];
+  {
+    type: "message",
+    from: "❤️",
+    text: (
+      <p>
+        Here's to all the memories you've made so far —
+        and all the ones still to come.
+      </p>
+    ),
+  },
+
+  {
+    type: "photo",
+    image: photos[5],
+    alt: "A family memory",
+    position: "center",
+    size: "large",
+  },
+];
 
   return (
     <section className="page memories-page">
