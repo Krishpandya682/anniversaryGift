@@ -229,13 +229,7 @@ function Memories({ onNext }) {
             return (
               <div
                 key={index}
-                className={`letter ${
-                  item.from === "❤️"
-                    ? "final-letter"
-                    : item.from === "Krish"
-                    ? "krish-letter"
-                    : ""
-                }`}
+                className={`letter`}
               >
 
                 <div className="letter-label">
