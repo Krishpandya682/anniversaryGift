@@ -15,12 +15,12 @@ const EMAILJS_PUBLIC_KEY = "ztKSaXyBd09tC5YgN";
 ============================================================ */
 
 const photos = [
-  "./images/01145116-57da-434b-b162-e4ad03b1fe38.JPG",
-  "./images/3a8765e9-074a-4551-95e8-63636c0344fb.JPG",
-  "./images/4ca12ede-1428-4897-9aaf-9b3b558fc73d.JPG",
-  "./images/a7192535-8dd9-4abf-8f81-ed84abb67ea4.JPG",
-  "./images/d772d3e4-304c-4366-b0af-1c2961ea2fbd.JPG",
-  "./images/eeb2be50-a2c0-4690-aa7e-6441b898b96d.JPG",
+  "./images/1.JPG",
+  "./images/2.JPG",
+  "./images/3.JPG",
+  "./images/4.JPG",
+  "./images/5.JPG",
+  "./images/6.JPG",
 ];
 
 /* ============================================================
@@ -159,7 +159,7 @@ function Memories({ onNext }) {
     // Temporary repeated photo
     {
       type: "photo",
-      image: photos[1],
+      image: photos[5],
       alt: "Another favorite memory",
       position: "left",
       size: "medium",
@@ -179,7 +179,7 @@ function Memories({ onNext }) {
     // Temporary repeated photo
     {
       type: "photo",
-      image: photos[5],
+      image: photos[6],
       alt: "Another favorite memory",
       position: "center",
       size: "large",
@@ -188,7 +188,7 @@ function Memories({ onNext }) {
     // Temporary repeated photo
     {
       type: "photo",
-      image: photos[2],
+      image: photos[7],
       alt: "Another favorite memory",
       position: "right",
       size: "medium",
@@ -197,7 +197,7 @@ function Memories({ onNext }) {
     // Temporary repeated photo
     {
       type: "photo",
-      image: photos[4],
+      image: photos[8],
       alt: "Another favorite memory",
       position: "left",
       size: "medium",
