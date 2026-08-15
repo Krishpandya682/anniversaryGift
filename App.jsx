@@ -184,13 +184,19 @@ function PlannerForm({ onSubmit }) {
     comments: "",
   });
 
-  function handleChange(e) {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  }
-
+   function handleChange(e) {
+     const { name, value, options, multiple } = e.target;
+   
+     setForm({
+       ...form,
+       [name]: multiple
+         ? Array.from(options)
+             .filter((option) => option.selected)
+             .map((option) => option.value)
+         : value,
+     });
+   }
+   
   async function submit(e) {
     e.preventDefault();
 
@@ -203,7 +209,7 @@ function PlannerForm({ onSubmit }) {
         {
           date: form.date,
           location: form.location,
-          vibe: form.vibe,
+          vibe: form.vibe.join(", "),
           comments: form.comments,
         },
         EMAILJS_PUBLIC_KEY
