@@ -237,6 +237,13 @@ function Memories({ onNext }) {
                     : ""
                 }`}
               >
+
+                <div className="letter-label">
+                  {`From ${item.from}`}
+                </div>
+
+                {item.text}
+
               </div>
             );
 
