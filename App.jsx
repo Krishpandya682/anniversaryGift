@@ -237,15 +237,6 @@ function Memories({ onNext }) {
                     : ""
                 }`}
               >
-
-                <div className="letter-label">
-                  {item.from === "❤️"
-                    ? "A little more..."
-                    : `From ${item.from}`}
-                </div>
-
-                {item.text}
-
               </div>
             );
 
