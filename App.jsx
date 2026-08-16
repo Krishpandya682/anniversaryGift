@@ -93,9 +93,8 @@ function Memories({ onNext }) {
       from: "Mom",
       text: (
         <p>
-          Happy Anniversary! We are so proud of both of you and wish you
-          many more years filled with happiness, laughter, and
-          unforgettable memories.
+          Wishing a Happy Anniversary to my daughter and son-in-law. 
+          May God keep you two together forever. 
         </p>
       ),
     },
@@ -133,16 +132,16 @@ function Memories({ onNext }) {
       text: (
         <>
           <p>
-            I wanted to do something a little different this year.
+            Exactly 365 days ago, I pronounced you partners for life, and your journey officially began. 
           </p>
 
           <p>
-            Instead of trying to guess what you'd enjoy, I thought I'd
-            let you choose the kind of day you'd love.
+            Congratulations on the first year of your marriage. 
+            I can't wait to watch you tackle new milestones, chase big dreams and grow old together. 
           </p>
 
           <p>
-            Once you tell me, I'll handle everything else.
+            Happy anniversary, sis and brother-in-law—the best is truly yet to come.
           </p>
         </>
       ),
