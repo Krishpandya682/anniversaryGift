@@ -113,7 +113,10 @@ function Memories({ onNext }) {
       text: (
         <p>
           Dear Isha and Karan, Happy 1st Anniversary to my favorite couple!
+          </p>
+          <p>
           I am so proud of the beautiful life and love you are building together. Wishing you a lifetime of endless happiness. 
+          </p>
           Cheers to many more memorable years ahead!
         </p>
       ),
