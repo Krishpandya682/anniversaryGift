@@ -111,6 +111,7 @@ function Memories({ onNext }) {
       type: "message",
       from: "Dad",
       text: (
+        <>
         <p>
           Dear Isha and Karan, Happy 1st Anniversary to my favorite couple!
         </p>
@@ -120,6 +121,7 @@ function Memories({ onNext }) {
         <p>
           Cheers to many more memorable years ahead!
         </p>
+        </>
       ),
     },
 
