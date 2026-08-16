@@ -112,8 +112,9 @@ function Memories({ onNext }) {
       from: "Dad",
       text: (
         <p>
-          Wishing you both a lifetime of adventures together. May every
-          year be even better than the last.
+          Dear Isha and Karan, Happy 1st Anniversary to my favorite couple!
+          I am so proud of the beautiful life and love you are building together. Wishing you a lifetime of endless happiness. 
+          Cheers to many more memorable years ahead!
         </p>
       ),
     },
@@ -141,7 +142,7 @@ function Memories({ onNext }) {
           </p>
 
           <p>
-            Happy anniversary, sis and brother-in-law—the best is truly yet to come.
+            Happy anniversary, Isha and Karan. The best is truly yet to come.
           </p>
         </>
       ),
