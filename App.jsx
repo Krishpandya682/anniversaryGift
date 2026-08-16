@@ -273,21 +273,33 @@ function PlannerForm({ onSubmit }) {
     comments: "",
   });
 
-   function handleChange(e) {
-     const { name, value, options, multiple } = e.target;
-   
-     setForm({
-       ...form,
-       [name]: multiple
-         ? Array.from(options)
-             .filter((option) => option.selected)
-             .map((option) => option.value)
-         : value,
-     });
-   }
-   
+  function handleChange(e) {
+    const { name, value } = e.target;
+
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  }
+
+  function handleVibeChange(e) {
+    const { value, checked } = e.target;
+
+    setForm({
+      ...form,
+      vibe: checked
+        ? [...form.vibe, value]
+        : form.vibe.filter((v) => v !== value),
+    });
+  }
+
   async function submit(e) {
     e.preventDefault();
+
+    if (form.vibe.length === 0) {
+      alert("Pick at least one kind of experience ❤️");
+      return;
+    }
 
     setSending(true);
 
@@ -357,28 +369,35 @@ function PlannerForm({ onSubmit }) {
 
           <label>What Kind Of Experience?</label>
 
-          <select
-            name="vibe"
-            value={form.vibe}
-            onChange={handleChange}
-            multiple
-            required
-          >
-            <option value="">Select...</option>     
-            <option>🌿 Relax & Recharge</option>
-            <option>✨ Luxury & Indulgence</option>
-            <option>🍷 Food & Wine</option>
-            <option>🎨 Arts & Creativity</option>
-            <option>🎭 Entertainment & Night Out</option>
-            <option>🧗 Adventure & Adrenaline</option>
-            <option>🌲 Nature & Outdoors</option>
-            <option>❤️ Romantic & Intimate</option>
-            <option>🧘 Wellness & Self-Care</option>
-            <option>🏡 Cozy & Low-Key</option>
-            <option>🗺️ Explore Somewhere New</option>
-            <option>🧠 Learn Something New</option>
-            <option>🎁 Surprise Us</option>
-          </select>
+          <div className="vibe-options">
+            {[
+              "🌿 Relax & Recharge",
+              "✨ Luxury & Indulgence",
+              "🍷 Food & Wine",
+              "🎨 Arts & Creativity",
+              "🎭 Entertainment & Night Out",
+              "🧗 Adventure & Adrenaline",
+              "🌲 Nature & Outdoors",
+              "❤️ Romantic & Intimate",
+              "🧘 Wellness & Self-Care",
+              "🏡 Cozy & Low-Key",
+              "🗺️ Explore Somewhere New",
+              "🧠 Learn Something New",
+              "🎁 Surprise Us",
+            ].map((option) => (
+              <label key={option} className="vibe-option">
+                <input
+                  type="checkbox"
+                  name="vibe"
+                  value={option}
+                  checked={form.vibe.includes(option)}
+                  onChange={handleVibeChange}
+                />
+
+                <span>{option}</span>
+              </label>
+            ))}
+          </div>
 
           <label>
             Tell me a little about what you're imagining...
@@ -405,7 +424,6 @@ function PlannerForm({ onSubmit }) {
     </section>
   );
 }
-
 /* ============================================================
    Success Page
 ============================================================ */

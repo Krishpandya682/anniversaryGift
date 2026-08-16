@@ -399,6 +399,31 @@ textarea:focus {
   margin-right: auto;
 }
 
+.vibe-options {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.vibe-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.vibe-option input {
+  width: auto;
+  margin: 0;
+}
+
+.vibe-option:hover {
+  background: #fafafa;
+}
+
 /* ============================================================
    Success
 ============================================================ */
